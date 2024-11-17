@@ -1,0 +1,748 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>11  ~に関係なく．無視して</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="129fdd5a-7808-80d7-a234-eb691405dd59" class="page sans"><header><h1 class="page-title">11  ~に関係なく．無視して</h1><p class="page-description"></p></header><div class="page-body"><p id="141fdd5a-7808-80bc-a5ce-c215cc4fa876" class="">
+</p><p id="141fdd5a-7808-8026-aea2-e598d9e55ab9" class="">~を問わず</p><p id="141fdd5a-7808-80e3-bce1-e8f25e3723cd" class="">接続：</p><p id="141fdd5a-7808-807c-949f-fc445fba2ab6" class="">　名詞　＋　を問わず</p><p id="141fdd5a-7808-80c8-b4d1-cf10e6dcf628" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="141fdd5a-7808-804e-af75-d7554443e4be"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="141fdd5a-7808-8031-a769-cd44b23a7479" class="">是不是~没有关系，包括其他无论<strong>是~情况结果</strong>都是一样的！</p></div></figure><p id="141fdd5a-7808-809e-a46b-f3ab0caf530b" class="">
+</p><p id="141fdd5a-7808-800e-83f6-da3bd71800e9" class="">
+</p><p id="141fdd5a-7808-8034-aa52-e88c5287b91a" class="">前面接续的，一般是幅度差异比较大、或者具有概括性的词语（年齢、国籍、天気）</p><p id="141fdd5a-7808-80b1-aaec-c911401efaba" class="">
+</p><p id="141fdd5a-7808-8051-b9d4-f688211334cf" class=""><strong>或者是由反义词构建起来的词语（男女、有無、内外「ないがい」）</strong></p><p id="141fdd5a-7808-8066-b478-cf473ee40f16" class="">
+</p><p id="141fdd5a-7808-80e2-8b02-e86c6ac46fd0" class="">
+</p><hr id="141fdd5a-7808-80aa-a18e-c8261e040cab"/><p id="141fdd5a-7808-8019-be51-c1554f727b4b" class="">
+</p><p id="141fdd5a-7808-80ed-95c7-c3f78a027084" class="">~にかかわりなく～</p><p id="141fdd5a-7808-8091-9b1e-fa9057f6d5f5" class="">
+</p><p id="141fdd5a-7808-809d-852b-f4e586954463" class="">～にかかわらず　～</p><p id="141fdd5a-7808-800e-b929-e7b0a1e456bf" class="">
+</p><ul id="141fdd5a-7808-80da-8071-ff5c2e1c9572" class="toggle"><li><details open=""><summary>接続：</summary><p id="141fdd5a-7808-807c-b9bc-d38547f9ca29" class="">名詞　＋</p></details></li></ul><p id="141fdd5a-7808-8078-9763-c90f1aa94fcb" class="">
+</p><p id="141fdd5a-7808-809e-93d6-c36a3eaead34" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="141fdd5a-7808-80a5-94ef-d3ce3d7d5198"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="141fdd5a-7808-801e-b85f-df46bbb2b643" class="">无论前面的例子~怎么样，其结果都是一样的！<br/><br/>前のことがどちらの場合でも，同じ結果が言える<br/></p></div></figure><p id="141fdd5a-7808-80ec-b404-ecb64e048053" class="">
+</p><p id="141fdd5a-7808-802a-8de7-e6c2326cbe10" class="">前面接续的词语，具有一定的范围</p><p id="141fdd5a-7808-8060-8887-ed4d15644eff" class="">
+</p><p id="141fdd5a-7808-8026-8d4c-f45e06e9333d" class="">表示相反意义的词语，或者和疑问词一起使用</p><p id="141fdd5a-7808-80e6-b836-fe6bef49380b" class="">
+</p><p id="141fdd5a-7808-80bc-922e-f9b2db50a226" class="">后面的句子的状态是和举出来的例子没有关系的，和其他内容有没有关系就不知道</p><p id="141fdd5a-7808-8035-a796-f2a2aa30e87b" class="">
+</p><p id="141fdd5a-7808-80c8-9561-f45482ca1748" class="">
+</p><p id="141fdd5a-7808-802a-a014-e55118710b76" class="">
+</p><p id="141fdd5a-7808-80cf-9ad2-dd686e792958" class="">乗った距離にかかわりなく全部200円</p><p id="141fdd5a-7808-802f-85d5-efda987a676b" class="">
+</p><p id="141fdd5a-7808-8027-8329-ec7654cd351a" class="">无论你座的距离有远，都是一个200日元</p><p id="141fdd5a-7808-8047-bf5a-cbb57564bf0d" class="">
+</p><p id="141fdd5a-7808-80cc-9c21-ed8febfd8349" class="">
+</p><p id="141fdd5a-7808-8087-9f9e-f1bbabe40806" class="">乗った距離を問わず、全部200円</p><p id="141fdd5a-7808-8067-8c89-c32bf94cbc96" class="">不管你座的距离怎么样，出现任何情况都是200块钱！</p><p id="141fdd5a-7808-8002-b1a9-dc83601b730c" class="">
+</p><p id="141fdd5a-7808-808f-a17b-fd81beca7c54" class="">
+</p><hr id="141fdd5a-7808-8032-83a3-fde21f581ae9"/><p id="141fdd5a-7808-80a3-80e6-fcae8263f596" class="">~もかまわず</p><p id="141fdd5a-7808-8036-a237-ee9507c5f610" class="">
+</p><p id="141fdd5a-7808-80f5-81e9-fee6e8e4d2ea" class="">接続：</p><p id="141fdd5a-7808-80ae-b176-cdb60070cf72" class="">　名詞　＋　もかまわず</p><p id="141fdd5a-7808-80bb-83c6-ecab8e5498d1" class="">　</p><p id="141fdd5a-7808-80f5-9d2c-eae3a9fb9d8d" class="">　動詞フレーズ（簡体）　＋　の　＋もかまわず</p><p id="141fdd5a-7808-80a5-9da5-d8d3d2366467" class="">　　</p><p id="141fdd5a-7808-8083-878a-d8ede8084ade" class="">　な形容詞　＋　な　＋の　＋もかまわず</p><p id="141fdd5a-7808-8058-9476-ec3017b1d4f5" class="">
+</p><p id="141fdd5a-7808-8074-9561-d32630d13ad0" class="">　な形容詞　＋　である　＋　の　＋　もかまわず</p><p id="141fdd5a-7808-80ee-8296-d4a6ba572088" class="">
+</p><p id="141fdd5a-7808-8022-bf52-e9cb5e04d826" class="">　名詞＋である＋の　＋　もかまわず</p><p id="141fdd5a-7808-8001-b9e4-eba62f26b91b" class="">
+</p><p id="141fdd5a-7808-809a-a25b-e02280d92564" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="141fdd5a-7808-8021-b9e8-fcaa4a7f9107"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="141fdd5a-7808-80ca-a05d-de0913ee5d4b" class="">平时会顾虑的事情，现在不管他去行动</p></div></figure><p id="141fdd5a-7808-80fa-97ef-c527c13204ae" class="">
+</p><p id="141fdd5a-7808-80dd-a51b-e368f7c2d966" class="">
+</p><ul id="141fdd5a-7808-80a5-a8c5-fa564a003baf" class="toggle"><li><details open=""><summary>注意ポイント：</summary><p id="141fdd5a-7808-80f3-9e6f-ffa8db0493f6" class="">后面接续的， 一般是不平常，带有意外性的动作！</p><p id="141fdd5a-7808-80fe-82c8-f325eb548efc" class="">
+</p><p id="141fdd5a-7808-8073-a35b-f5739ead6dfa" class="">句子中不能出现人为意志的内容（推荐，命令，期望）</p></details></li></ul><p id="141fdd5a-7808-80f3-b3c5-d759051a91fe" class="">
+</p><p id="141fdd5a-7808-803b-a2e0-ced1f14bbe7f" class="">見かける　みかける　 无意识的看到~</p><p id="141fdd5a-7808-806c-9b12-f8accee61ae4" class="">
+</p><p id="141fdd5a-7808-803d-99be-d6c0006abfbe" class="">人目　ひとめ　 别人的眼神</p><p id="141fdd5a-7808-802f-8d25-c12aeea8c0a2" class="">
+</p><p id="141fdd5a-7808-804d-833b-e535ffef2ad3" class="">
+</p><ul id="141fdd5a-7808-801d-8f74-f2d08a85056e" class="bulleted-list"><li style="list-style-type:disc">～どんどん</li></ul><p id="141fdd5a-7808-80fc-a26b-f8662c8a6720" class="">越来越~</p><p id="141fdd5a-7808-806f-a786-e1dee0ef1449" class="">
+</p><p id="141fdd5a-7808-80f4-b9a0-f8103370caf2" class="">どんどん面白くなりました</p><p id="141fdd5a-7808-8030-b947-e569efa1349e" class="">逐渐变得有趣了！</p><p id="141fdd5a-7808-80f1-a40d-e0022c85594d" class="">
+</p><hr id="141fdd5a-7808-80f7-9cea-f9d6ded9aef5"/><ul id="141fdd5a-7808-804b-9a42-fa6ad24fcd77" class="toggle"><li><details open=""><summary><strong>~はともかく（として）</strong></summary></details></li></ul><p id="141fdd5a-7808-80f3-b860-c34f2359037d" class="">
+</p><p id="141fdd5a-7808-8024-b061-f97dd7ad487e" class="">接続：</p><p id="141fdd5a-7808-809f-85e8-d6f533dcef87" class="">　名詞　＋（助詞）</p><p id="141fdd5a-7808-80af-b441-efd0ee35a2d0" class="">
+</p><p id="141fdd5a-7808-80e5-82fb-e21a4a791197" class="">由于有更想强调的内容，就暂时不考虑某一个~</p><p id="141fdd5a-7808-8049-a6f8-ec57c1589c06" class="">
+</p><ul id="141fdd5a-7808-80b5-a227-fe29ed73981b" class="toggle"><li><details open=""><summary>注意ポイント：</summary><p id="141fdd5a-7808-80a1-b6ef-d375f04f4317" class="">前面举例出来的事项，<mark class="highlight-blue"><strong>相比较之下没有后面的事情重要</strong></mark></p><p id="141fdd5a-7808-803b-bb6f-f2a259fd6498" class="">
+</p><p id="141fdd5a-7808-8045-84e0-c31a15736433" class="">句子当中可以和疑问词一起使用</p><p id="141fdd5a-7808-8094-bf06-d02edde46aaa" class="">
+</p><p id="141fdd5a-7808-804c-b402-f00c6f4c87b3" class="">后面的句子是比前句更加需要强调的句子！</p><p id="141fdd5a-7808-8014-ab0f-d55a37465d11" class="">
+</p></details></li></ul><p id="141fdd5a-7808-8030-8fe1-f127e03d8248" class="">
+</p><div id="141fdd5a-7808-8061-8f38-dc165682818f" class="column-list"><div id="141fdd5a-7808-80cd-b7b9-c56e9f2fd1ea" style="width:50%" class="column"><p id="141fdd5a-7808-8021-981f-c1d31a60ad6b" class=""><strong>ホンシャオロウ</strong></p><p id="141fdd5a-7808-803e-86f5-f0094c83de69" class="">
+</p></div><div id="141fdd5a-7808-80e6-a027-c4aeed8f4f14" style="width:50%" class="column"><figure id="141fdd5a-7808-8039-8002-e1fba8752e5b" class="image"><a href="download.jpg"><img style="width:222.484375px" src="download.jpg"/></a></figure></div></div><p id="141fdd5a-7808-8047-9f37-ed7c977488d0" class="">
+</p><div id="141fdd5a-7808-80c0-a8ec-f65bff78e5a0" class="column-list"><div id="141fdd5a-7808-8099-b299-eb906784c602" style="width:50%" class="column"><p id="141fdd5a-7808-80c3-8e4d-ff8ef23b5b2f" class="">この店の内装はともかく、料理は全部美味しいです！</p></div><div id="141fdd5a-7808-8070-8726-d8dbb2289b84" style="width:50%" class="column"><figure id="141fdd5a-7808-807e-ac2f-e09ed4444fc4" class="image"><a href="image.png"><img style="width:222.484375px" src="image.png"/></a></figure></div></div><p id="141fdd5a-7808-8004-addc-e9e0611ae09c" class="">
+</p><p id="141fdd5a-7808-805e-8903-dcd73465c87a" class="">
+</p><hr id="141fdd5a-7808-8075-a8cb-d5dcfc130a6a"/><p id="141fdd5a-7808-8011-ac29-da0aa138d805" class="">
+</p><ul id="141fdd5a-7808-8086-9bd2-d3a5f2da6bbf" class="toggle"><li><details open=""><summary><strong>～はさておき　　</strong></summary><p id="141fdd5a-7808-80b0-98e5-fc671f3265f3" class="">
+</p></details></li></ul><p id="141fdd5a-7808-80b8-981e-f6fb36394462" class="">
+</p><p id="141fdd5a-7808-8004-b8d8-d915de4e5fb0" class="">接続：</p><p id="141fdd5a-7808-8049-882d-d62ff68c1642" class="">　名詞　（助詞）＋　はさておき</p><p id="141fdd5a-7808-8073-a325-ce690f2cd685" class="">
+</p><p id="141fdd5a-7808-80f5-8c9a-f0d887b2b873" class="">
+</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="141fdd5a-7808-80f1-b198-c166ea3d61e7"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><p id="141fdd5a-7808-8064-80ff-ce11f70c6f79" class="">由于其他还有更重要的， 先把~排除话题之外</p></div></figure><p id="141fdd5a-7808-8043-83ad-cb26dc9d9fdf" class="">
+</p><p id="141fdd5a-7808-8051-a33d-c667c6942d73" class="">
+</p><p id="141fdd5a-7808-808c-9861-c460c9848d76" class="">前面接续的内容一般是已经产生了的话题</p><p id="141fdd5a-7808-805f-82f9-d3a238de1ce9" class="">
+</p><p id="141fdd5a-7808-8017-a43f-fc2057f7f437" class="">句子当中会和疑问词一起使用表达</p><p id="141fdd5a-7808-80c3-9f30-f464642da748" class="">
+</p><p id="141fdd5a-7808-809d-a3a2-c497e17072f6" class="">后面的句子一般是比前面<mark class="highlight-pink"><mark class="highlight-blue_background"><strong>更加具有优先顺序，更加基础的内容！</strong></mark></mark></p><p id="141fdd5a-7808-805d-9079-d67369fd0d1c" class="">
+</p><p id="141fdd5a-7808-8058-94d0-e823202f361b" class="">
+</p><p id="141fdd5a-7808-80ab-90c6-d96eeafa8a32" class="">
+</p><p id="141fdd5a-7808-800c-a063-fe0bd13d0074" class="">
+</p><p id="141fdd5a-7808-80c9-9dac-d8d97bb6572b" class="">先不管能不能见到明天太阳了，先考虑下今晚吃什么吧！</p><p id="141fdd5a-7808-80a8-b30c-ea2b06932f53" class="">明日の太陽が見えることはさておき、まず今夜の食事を考えろ！</p><p id="141fdd5a-7808-804d-9b06-c90deb45208b" class="">
+</p><p id="141fdd5a-7808-801c-90aa-fe9a10b51829" class="">
+</p><p id="141fdd5a-7808-8019-b155-df864b63a28a" class="">
+</p><p id="141fdd5a-7808-8079-9134-d64acee6d4b2" class="">は別として</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
